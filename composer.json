@@ -7,7 +7,8 @@
         "AFL-3.0"
     ],
     "require": {
-        "doofinder/doofinder-magento2": "*"
+        "doofinder/doofinder-magento2": "*",
+        "magento/product-community-edition": ">= 2.2.6 <= 2.2.11"
     },
     "autoload": {
         "files": [
