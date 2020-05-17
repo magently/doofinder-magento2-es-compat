@@ -1,0 +1,20 @@
+{
+    "name": "doofinder/doofinder-magento2-es-compat",
+    "description": "Module for Doofinder_Feed module compatibility",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "doofinder/doofinder-magento2": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Doofinder\\FeedCompatibility\\": ""
+        }
+    }
+}
