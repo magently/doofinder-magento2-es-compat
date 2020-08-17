@@ -30,6 +30,7 @@
             <argument name="searchCriteriaResolverFactory" xsi:type="object">doofinderSearchCriteriaResolverFactory</argument>
             <argument name="searchResultApplierFactory" xsi:type="object">doofinderSearchResultApplier\Factory</argument>
             <argument name="totalRecordsResolverFactory" xsi:type="object">doofinderTotalRecordsResolver\Factory</argument>
+            <argument name="defaultFilterStrategyApplyChecker" xsi:type="object">Doofinder\FeedCompatibility\Model\ResourceModel\Fulltext\Collection\DefaultFilterStrategyApplyChecker</argument>
         </arguments>
     </virtualType>
     <virtualType name="doofinderFulltextSearchCollectionFixedFactory" type="Magento\CatalogSearch\Model\ResourceModel\Fulltext\SearchCollectionFactory">
@@ -43,6 +44,7 @@
             <argument name="searchCriteriaResolverFactory" xsi:type="object">doofinderSearchCriteriaResolverFactory</argument>
             <argument name="searchResultApplierFactory" xsi:type="object">doofinderSearchResultApplier\Factory</argument>
             <argument name="totalRecordsResolverFactory" xsi:type="object">doofinderTotalRecordsResolver\Factory</argument>
+            <argument name="defaultFilterStrategyApplyChecker" xsi:type="object">Doofinder\FeedCompatibility\Model\ResourceModel\Fulltext\Collection\DefaultFilterStrategyApplyChecker</argument>
         </arguments>
     </virtualType>
     <virtualType name="doofinderAdvancedCollectionFixedFactory" type="Magento\CatalogSearch\Model\ResourceModel\Advanced\CollectionFactory">
@@ -56,6 +58,7 @@
             <argument name="searchCriteriaResolverFactory" xsi:type="object">doofinderSearchCriteriaResolverFactory</argument>
             <argument name="searchResultApplierFactory" xsi:type="object">doofinderSearchResultApplier\Factory</argument>
             <argument name="totalRecordsResolverFactory" xsi:type="object">doofinderTotalRecordsResolver\Factory</argument>
+            <argument name="defaultFilterStrategyApplyChecker" xsi:type="object">Doofinder\FeedCompatibility\Model\ResourceModel\Fulltext\Collection\DefaultFilterStrategyApplyChecker</argument>
         </arguments>
     </virtualType>
     <virtualType name="doofinderCategoryCollectionFixedFactory" type="Magento\CatalogSearch\Model\ResourceModel\Fulltext\SearchCollectionFactory">
