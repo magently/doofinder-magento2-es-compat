@@ -64,13 +64,13 @@ class SearchResultApplier implements SearchResultApplierInterface
         }
 
         if (!$this->size) {
-            $this->size = (int) $this->collection->getSize();
+            $this->size = (int) $this->collection->getPageSize();
         }
         if (!$this->currentPage) {
             $this->currentPage = (int) $this->collection->getCurPage();
         }
 
-        $items = $this->sliceItems($this->searchResult->getItems(), $this->size, $this->currentPage);
+        $items = $this->searchResult->getItems();
         $ids = [];
         foreach ($items as $item) {
             $ids[] = (int) $item->getId();
@@ -80,31 +80,5 @@ class SearchResultApplier implements SearchResultApplierInterface
         $orderList = join(',', $ids);
         $this->collection->getSelect()->reset(Select::ORDER);
         $this->collection->getSelect()->order(new Zend_Db_Expr("FIELD(e.entity_id,$orderList)"));
-    }
-
-    /**
-     * Slice current items
-     *
-     * @param array $items
-     * @param integer $size
-     * @param integer $currentPage
-     * @return array
-     */
-    private function sliceItems(array $items, $size, $currentPage)
-    {
-        if ($size !== 0) {
-            // Check that current page is in a range of allowed page numbers, based on items count and items per page,
-            // than calculate offset for slicing items array.
-            $totalPages = (int) ceil(count($items) / $size);
-            $currentPage = min($currentPage, $totalPages);
-            $offset = ($currentPage - 1) * $size;
-            if ($offset < 0) {
-                $offset = 0;
-            }
-
-            $items = array_slice($items, $offset, $size);
-        }
-
-        return $items;
     }
 }
