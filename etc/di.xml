@@ -85,4 +85,6 @@
             <argument name="collectionFactory" xsi:type="object">doofinderCategoryCollectionFixedFactory</argument>
         </arguments>
     </type>
+
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Decimal" type="Doofinder\FeedCompatibility\Model\Layer\Filter\Decimal" />
 </config>
