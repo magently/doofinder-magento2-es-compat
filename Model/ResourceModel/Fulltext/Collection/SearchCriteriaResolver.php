@@ -75,7 +75,7 @@ class SearchCriteriaResolver implements SearchCriteriaResolverInterface
     public function resolve(): SearchCriteria
     {
         if (!$this->size) {
-            $this->size = (int) $this->collection->getSize();
+            $this->size = (int) $this->collection->getPageSize();
         }
         if (!$this->currentPage) {
             $this->currentPage = (int) $this->collection->getCurPage();
@@ -84,6 +84,7 @@ class SearchCriteriaResolver implements SearchCriteriaResolverInterface
         $searchCriteria = $this->builder->create();
         $searchCriteria->setRequestName($this->searchRequestName);
         $searchCriteria->setSortOrders($this->orders);
+        $searchCriteria->setPageSize($this->size);
         $searchCriteria->setCurrentPage($this->currentPage - 1);
 
         return $searchCriteria;
